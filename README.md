@@ -19,6 +19,9 @@ had deleted.
 <details>
   <summary>Big changes made in this repo.</summary>
   <pre>
+- 2021-04-16
+  - Readme fixed, adguard fixed
+      options-formulae upd, brew-gem removed
 - 2021-04-15 mpdscribble formula
 - 2021-04-14 smlnj formula, truoble to get in work on linux
 - 2021-04-13
@@ -49,18 +52,16 @@ brew install juplutonic/homebrew-tap/<formula>
 
 - pip `brew-pip`, [brew pip](https://github.com/josegonzalez/brew-pip) [(my last modification)](https://github.com/josegonzalez/brew-pip/pull/2)
 
-- gem `brew-gem`, [brew gem](https://github.com/sportngin/brew-gem) [(my last modification)](https://github.com/sportngin/brew-gem/pull/68)
-
 ## The workflow to manage my tap
 Check the `Livechecks/` folder for watchlists:
 * * *
-- 🕗️Coming soon: 1_brew-pip_brew-gem_formulas
+- 1`brew livecheck brew-pip`
 
 - 2_maintained_formulas
 
 - 3_options_formulas
 
-- 🕗️Coming soon: 4_dns_formulas
+- 4_dns_formulas
 
 - 🕗️Coming soon: 5_maintained_linuxbrew_formulas
 
@@ -69,7 +70,7 @@ Check the `Livechecks/` folder for watchlists:
 Command [(more info about usage of the Homebrew Livecheck)][Homebrew/Livecheck]:
 
 ```bash
-brew livecheck < Livechecks/3_options_formulas
+brew livecheck < Livechecks/3_options_formulas # or brew livecheck --tap=juplutonic/homebrew-tap
 ```
 
 ## Formulae
