@@ -4,11 +4,11 @@ class DnsOverHttps < Formula
   desc "High performance DNS over HTTPS client & server"
   homepage "https://github.com/m13253/dns-over-https"
   head "https://github.com/m13253/dns-over-https.git"
-  url "https://github.com/m13253/dns-over-https/archive/v2.2.1.tar.gz"
-  sha256 "49cf259a4756950d1653126b2609d2c713782aab8194915c4be11bf0017ba4f0"
+  url "https://github.com/m13253/dns-over-https/archive/v2.2.5.tar.gz"
+  sha256 "2e7464195975619e1c2745195a3506e423eca9ccddb2234fd4b2ad9c17abb025"
 
 
-  conflicts_with "doh-proxy", :because => "both install binaries `doh-proxy`, `doh-client`"
+  conflicts_with "doh-proxy", because: "both install binaries `doh-proxy`, `doh-client`"
   depends_on "go" => :build
 
   def install
@@ -27,8 +27,8 @@ class DnsOverHttps < Formula
         doh-client
         doh-server
       ].each do |i|
-        bin.install "#{i}/#{i}" => "#{i}"
-        etc.install "#{i}/#{i}.conf" => "dns-over-https/#{i}.conf"
+        bin.install("#{i}/#{i}" => "#{i}")
+        etc.install("#{i}/#{i}.conf" => "dns-over-https/#{i}.conf")
       end
 
       prefix.install_metafiles
@@ -39,8 +39,7 @@ class DnsOverHttps < Formula
     system bin/"doh-client", "-version"
   end
 
-  # TODO:
-  # Run multiple plists under one formula #192
-  # https://github.com/Homebrew/homebrew-services/issues/192
+  # TODO: run multiple plists under one formula #192
+  #   https://github.com/Homebrew/homebrew-services/issues/192
 
 end
