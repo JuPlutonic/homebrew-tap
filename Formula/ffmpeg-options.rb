@@ -32,7 +32,7 @@ class FfmpegOptions < Formula
   option 'with-openh264', 'Enable OpenH264 library'
   option 'with-openssl', 'Enable SSL support'
   option 'with-rtmpdump', 'RTMPDump support'
-  option 'with-zeromq', 'Enable using libzeromq to receive commands sent through a ZeroMQ client'
+  option 'with-zeromq', 'Enable using libzeromq to receive ZeroMQ-commands'
   option 'with-zimg', 'Enable z.lib zimg library'
   # option "with-srt", "Enable SRT library"
   option 'with-libvmaf', 'Enable libvmaf scoring library'
