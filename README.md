@@ -188,6 +188,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 > --with-libssh - SFTP protocol via libssh
 > --with-openh264 - OpenH264 library
 > --with-openssl - SSL support
+> --with-rtmpdump - RTMPDump support
 > --with-zeromq - using libzeromq to receive commands sent through a ZeroMQ client
 > --with-zimg - z.lib zimg library
 > --with-libvmaf - libvmaf scoring library

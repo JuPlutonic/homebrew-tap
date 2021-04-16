@@ -12,8 +12,8 @@ class FfmpegOptions < Formula
   head "https://github.com/FFmpeg/FFmpeg.git"
 
   stable do
-    url "https://ffmpeg.org/releases/ffmpeg-4.3.2.tar.xz"
-    sha256 "46e4e64f1dd0233cbc0934b9f1c0da676008cad34725113fb7f802cfa84ccddb"
+    url "https://ffmpeg.org/releases/ffmpeg-4.4.tar.xz"
+    sha256 "06b10a183ce5371f915c6bb15b7b1fffbe046e8275099c96affc29e17645d909"
   end
 
   livecheck do
@@ -31,7 +31,8 @@ class FfmpegOptions < Formula
   option "with-libssh", "Enable SFTP protocol via libssh"
   option "with-openh264", "Enable OpenH264 library"
   option "with-openssl", "Enable SSL support"
-  option "with-zeromq", "Enable using libzeromq to receive commands sent through a libzeromq client"
+  option "with-rtmpdump", "RTMP support"
+  option "with-zeromq", "Enable using libzeromq to receive commands sent through a ZeroMQ client"
   option "with-zimg", "Enable z.lib zimg library"
   # option "with-srt", "Enable SRT library"
   option "with-libvmaf", "Enable libvmaf scoring library"
@@ -54,7 +55,6 @@ class FfmpegOptions < Formula
   depends_on "openjpeg"
   depends_on "opus"
   depends_on "rav1e"
-  depends_on "rtmpdump"
   depends_on "rubberband"
   depends_on "sdl2"
   depends_on "snappy"
@@ -93,6 +93,7 @@ class FfmpegOptions < Formula
   depends_on "libssh" => :optional
   depends_on "libvmaf" => :optional
   depends_on "openh264" => :optional
+  depends_on "rtmpdump" => :optional
   depends_on "two-lame" => :optional
   depends_on "wavpack" => :optional
   depends_on "zeromq" => :optional
@@ -108,6 +109,7 @@ class FfmpegOptions < Formula
       --cc=#{ENV.cc}
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
+      --enable-ffplay
       --enable-gpl
       --enable-libaom
       --enable-libbluray
@@ -136,20 +138,19 @@ class FfmpegOptions < Formula
       --enable-libopencore-amrnb
       --enable-libopencore-amrwb
       --enable-libopenjpeg
-      --enable-librtmp
       --enable-libspeex
       --enable-libsoxr
-      --enable-videotoolbox
       --disable-libjack
       --disable-indev=jack
     ]
 
-    if build.with? "openssl"
-      args << "--enable-openssl"
-    else
-      args << "--enable-gnutls"
+    on_macos do
+      # Since Mountain Lion it needs corefoundation, coremedia, corevideo
+      args << '--enable-videotoolbox'
+      # Deleted line (args << '--enable-opencl' if MacOS.version > :lion)
     end
 
+    args << (build.with?('openssl') ? '--enable-openssl' : '--enable-gnutls')
     args << "--enable-chromaprint" if build.with? "chromaprint"
     args << "--enable-libbs2b" if build.with? "libbs2b"
     args << "--enable-libcaca" if build.with? "libcaca"
@@ -159,6 +160,7 @@ class FfmpegOptions < Formula
     args << "--enable-libmodplug" if build.with? "libmodplug"
     args << "--enable-libopenh264" if build.with? "openh264"
     args << "--enable-librsvg" if build.with? "librsvg"
+    args << "--enable-librtmp" if build.with? "rtmpdump"
     # args << "--enable-libsrt" if build.with? "srt"
     args << "--enable-libssh" if build.with? "libssh"
     args << "--enable-libtwolame" if build.with? "two-lame"
@@ -167,14 +169,9 @@ class FfmpegOptions < Formula
     args << "--enable-libzimg" if build.with? "zimg"
     args << "--enable-libzmq" if build.with? "zeromq"
 
-    if OS.mac?
-      args << "--enable-opencl" if MacOS.version > :lion
-      args << "--enable-videotoolbox" if MacOS.version >= :mountain_lion
-    end
-
     # These librares are GPL-incompatible, and require ffmpeg be built with
     # the "--enable-nonfree" flag, which produces unredistributable libraries
-    args << "--enable-nonfree" if build.with?("decklink") || build.with?("fdk-aac") || build.with?("openssl")
+    args << '--enable-nonfree' if build.with?('decklink') || build.with?('fdk-aac') || build.with?('openssl')
 
     if build.with? "decklink"
       args << "--enable-decklink"
@@ -187,16 +184,16 @@ class FfmpegOptions < Formula
 
     # Build and install additional FFmpeg tools
     system "make", "alltools"
-    bin.install Dir["tools/*"].select { |f| File.executable? f }
+    bin.install Dir['tools/*'].select { |f| File.executable? f }
 
     # Fix for Non-executables that were installed to bin/
-    mv bin/"python", pkgshare/"python", force: true
+    mv(bin/'python', pkgshare/'python', force: true)
   end
 
   test do
     # Create an example mp4 file
-    mp4out = testpath/"video.mp4"
-    system bin/"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    mp4out = testpath/'video.mp4'
+    system(bin/'ffmpeg', '-filter_complex', 'testsrc=rate=1:duration=1', mp4out)
     assert_predicate mp4out, :exist?
   end
 end
