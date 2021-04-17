@@ -11,8 +11,8 @@ Originally cr8d by laggardkernel as a place for:
 This tap will be more Linuxbrew-core centric, w/o intention to lose darwin platform
 compabillity.
 
-All Python's whistles and bells had removed, formulas-with-options only for Mac also
-had deleted.
+All Python's whistles and bells were removed, formulas-with-options only for Mac also
+were deleted.
 
 ## News
 
@@ -20,13 +20,13 @@ had deleted.
 
 ~~~
 - 2021-04-16
-  - Readme fixed, adguard fixed
-      dns- and options-formulae upd, brew-gem removed
+  - Readme was fixed, adguard was fixed
+      dns- and options-formulae were upd, brew-gem was removed
 - 2021-04-15 mpdscribble formula
 - 2021-04-14 smlnj formula, trouble to get in work on linux
 - 2021-04-13
   - New Readme, first watchlists for Homebrew's livecheck
-      pywhistles/casks/formulas w/ options only for Mac had removed.
+      python's venv/conda, casks/formulas w/ options only for Mac were removed.
   - Backported new updates from original repo.
 - 12-01-2020
   - `Homebrew.args` is deprecated in 2.6.0.
@@ -51,7 +51,7 @@ brew install juplutonic/homebrew-tap/<formula>
 
 - git-gc `brew git-gc`, copied from ymyzk/homebrew-ymyzk, original tap removed
 
-- pip `brew-pip`, [brew pip](https://github.com/josegonzalez/brew-pip) [my mod](https://github.com/josegonzalez/brew-pip/pull/2)
+- pip `brew-pip`, [brew pip, doesn't work](https://github.com/josegonzalez/brew-pip) [my PR, work](https://github.com/josegonzalez/brew-pip/pull/2)
 
 ## The workflow to manage my tap
 
@@ -73,8 +73,8 @@ Check the `Livechecks/` folder for watchlists:
 
 Command ([more info about usage of the Homebrew Livecheck][Homebrew/Livecheck]):
 
-```bash
-
+` ``bash
+# cd into the folder, in which you cloned Homebrew-tap / copied Livechecks/ folder, then run
 brew livecheck < Livechecks/3_options_formulas
 # or
 brew livecheck --tap=juplutonic/homebrew-tap
@@ -114,7 +114,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 ### 🛡️ ChinaDNS
 
 > `chinadns`, fork [aa65535/ChinaDNS][aa65535/ChinaDNS].
-> - more exact [17mon/china_ip_list][17mon/china_ip_list] is recommended
+> - more exact [17mon/china_ip_list][17mon/china_ip_list] is recommended.
 
 ### 🛠 Cht.Sh
 
@@ -210,14 +210,14 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 > **iterm2-zmodem** \
 > The script to send/recieve files, exchange can be done with remote 💻️, \
-> what have installed `lrzsz` app on it. \
+> that have installed `lrzsz` app on it. \
 > `--HEAD` only.
 > * * *
 > No license.
 
 ### 🛠 License
 
-> [It is nishanths's license script][license], usage: \
+> It is nishanths's [license][license] script, usage: \
 > `license mit > LICENSE.txt`
 > * * *
 > Livecheck ✔️ \
@@ -235,7 +235,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛡️ MosDNS
 
-> 'mosdns-bin' \
+> **mosdns-bin** \
 > Older versions called `mos-chinadns-bin`.
 > * * *
 > Livecheck ✔️ \
@@ -243,7 +243,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛠 mpdscribble
 
-> `MPD scrobbler`
+> **mdpscribble** is a `MPD scrobbler`
 > * * *
 > TODO: transfer to linuxbrew-core. \
 > Livecheck ✔️ \
@@ -270,7 +270,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛠 Pipe-viewer
 
-> **pipe-viever**, former straw- former youtube- viewer.
+> **pipe-viever** (former straw-viewer, former youtube-viewer).
 > A lightweight YouTube client for Linux. \
 > `--HEAD` only.
 > * * *
@@ -280,7 +280,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛠 plan9port
 
-> Standalone `Plan 9 from User Space` working over 9p protocol \
+> Standalone `Plan 9 from User Space` working over 9p protocol. \
 > See [original jacobvosmaer's formula][jacobvosmaer_plan9port].
 > * * *
 > TODO: PR to jacobvosmaer / linuxbrew-core. \
@@ -295,12 +295,12 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🔲🔘🔳 Ranger
 
-> **ranger-fm** with optional dependencies: \
-> - `chardet` for better encoding detection; \
+> **ranger-fm** with optional dependencies:
+> - `chardet` for better encoding detection;
 > - `Pillow` (depended by image preview in kitty); \
 > `--HEAD` only.
 > * * *
-> TODO: add livecheck, do python3 errors closed? \
+> TODO: add livecheck, do tTerm2+python3 errors appears? \
 > GPL-3.0 License.
 
 ### 🛡️ Routedns
@@ -316,7 +316,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛠 SML NJ
 
-> ##smlnj## \
+> **smlnj** \
 >Standard ML of New Jersey. \
 > For darwin see [macports][smlnjs].
 > * * *
@@ -327,14 +327,14 @@ brew livecheck --tap=juplutonic/homebrew-tap
 ### 🛠 sshpass
 
 > [sshpass][sshpass] is easier, less secure way to do SSH-authentification,
-> mostly for home use.
+> mostly for home use. Will not be maintained in official Homebrew repos.
 > * * *
 > Livecheck ✔️ \
 > GPLv2 License.
 
 ### 🔲🔘🔳 tmux
 
-> `tmux-options`: \
+> `tmux-options`:
 > - `--with-fps=`, `--with-fps=30` custom FPS 30, default 10.
 > * * *
 > Livecheck ✔️ \
