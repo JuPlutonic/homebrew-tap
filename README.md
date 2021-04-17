@@ -11,8 +11,8 @@ Originally cr8d by laggardkernel as a place for:
 This tap will be more Linuxbrew-core centric, w/o intention to lose darwin platform
 compabillity.
 
-All Python's whistles and bells were removed, formulas-with-options only for Mac also
-were deleted.
+All Python's whistles and bells were removed, formulas-with-options only for Mac
+also were deleted.
 
 ## News
 
@@ -45,13 +45,14 @@ brew install juplutonic/homebrew-tap/<formula>
 
 ## External Commands
 
-- switch ```brew switch```, the old goodie dropped by brew in 2.6.0
+- switch ```brew switch```, the old goodie dropped by brew in 2.6.0;
 
-- fix-perm ```brew fix-perm```, fix formula file perms broke by ```sudo brew services```
+- fix-perm ```brew fix-perm```, fix formula file perms broke by ```sudo brew services```;
 
-- git-gc `brew git-gc`, copied from ymyzk/homebrew-ymyzk, original tap removed
+- git-gc `brew git-gc`, copied from ymyzk/homebrew-ymyzk, original tap removed;
 
-- pip `brew-pip`, [brew pip, doesn't work](https://github.com/josegonzalez/brew-pip) [my PR, work](https://github.com/josegonzalez/brew-pip/pull/2)
+- pip `brew-pip`, official repo's [brew pip](https://github.com/josegonzalez/brew-pip),
+   doesn't work / [my PR](https://github.com/josegonzalez/brew-pip/pull/2), works.
 
 ## The workflow to manage my tap
 
@@ -73,8 +74,9 @@ Check the `Livechecks/` folder for watchlists:
 
 Command ([more info about usage of the Homebrew Livecheck][Homebrew/Livecheck]):
 
-` ``bash
-# cd into the folder, in which you cloned Homebrew-tap / copied Livechecks/ folder, then run
+```bash
+# cd into the folder, in which
+# you cloned Homebrew-tap / copied Livechecks/ folder, then run
 brew livecheck < Livechecks/3_options_formulas
 # or
 brew livecheck --tap=juplutonic/homebrew-tap
@@ -226,8 +228,8 @@ brew livecheck --tap=juplutonic/homebrew-tap
 ### 🛡️ MEOW
 
 > **meow** \
-> [The proxy][meow] or direct connect according to geolocation, \
-> it is a fork of COW that uses whitelist mode. \
+> Works as a proxy or as a direct connect according to geolocation, \
+> it is a fork of COW that uses whitelist mode. See [MEOW's site][meow]. \
 > `--HEAD` only.
 > * * *
 > TODO: livecheck. \
