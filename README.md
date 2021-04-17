@@ -93,8 +93,8 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🔲🔘🔳 Aria2
 
-> `aria2-options` \
-> - Header 'Want-Digest' is removed; \
+> `aria2-options`
+> - Header 'Want-Digest' is removed;
 > - `--with-gnutls` (no TLSv1.3 support in appletls).
 > * * *
 > Livecheck ✔️ \
@@ -113,7 +113,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛡️ ChinaDNS
 
-> `chinadns`, fork [aa65535/ChinaDNS][aa65535/ChinaDNS]. \
+> `chinadns`, fork [aa65535/ChinaDNS][aa65535/ChinaDNS].
 > - more exact [17mon/china_ip_list][17mon/china_ip_list] is recommended
 
 ### 🛠 Cht.Sh
@@ -123,11 +123,11 @@ brew livecheck --tap=juplutonic/homebrew-tap
 ### 🛡️ ClashPremium
 
 > TODO: livecheck. \
-> GPL-3.0 License
+> GPL-3.0 License.
 
 ### 🛡️ CureDNS
 
-> [cdns][curedns], filter poisoned result with EDNS option. \
+> [cdns][curedns], filter poisoned result with EDNS option.
 > - fails to build from `--HEAD` for the time being.
 
 ### 🔲🔘🔳 cURL
@@ -152,8 +152,8 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🔲🔘🔳 🛡️ DNSmasq
 
-> `dnsmasq-options`: \
-> - `--with-dnssec`; \
+> `dnsmasq-options`:
+> - `--with-dnssec`;
 > - `--with-libidn`.
 > * * *
 > Livecheck ✔️ \
@@ -201,12 +201,14 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛠 FilebrowserBin
 
-> livecheck  ✔️ \
+> **filebrowser-bin**
+> * * *
+> Livecheck  ✔️ \
 > Apache-2.0 License.
 
 ### 🛡️ iTerm2 ZModem
 
-> iterm2-zmodem \
+> **iterm2-zmodem** \
 > The script to send/recieve files, exchange can be done with remote 💻️, \
 > what have installed `lrzsz` app on it. \
 > `--HEAD` only.
@@ -215,7 +217,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛠 License
 
-> [It is nishanths's licence script][license], usage: \
+> [It is nishanths's license script][license], usage: \
 > `license mit > LICENSE.txt`
 > * * *
 > Livecheck ✔️ \
@@ -223,8 +225,9 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛡️ MEOW
 
-> [MEOW][meow] - the proxy or direct connect according to geolocation, \
-> it uses whitelist mode. Fork of proxy COW. \
+> **meow** \
+> [The proxy][meow] or direct connect according to geolocation, \
+> it is a fork of COW that uses whitelist mode. \
 > `--HEAD` only.
 > * * *
 > TODO: livecheck. \
@@ -253,7 +256,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🔲🔘🔳 OpenSSH
 
-> `openssh-options`: \
+> `openssh-options`:
 > - `--with-libressl`
 > * * *
 > Livecheck ✔️ \
@@ -267,7 +270,9 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛠 Pipe-viewer
 
+> **pipe-viever**, former straw- former youtube- viewer.
 > A lightweight YouTube client for Linux. \
+> `--HEAD` only.
 > * * *
 > TODO: transfer to linuxbrew-core. \
 > Livecheck ✔️ \
@@ -290,7 +295,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🔲🔘🔳 Ranger
 
-> ranger-fm with optional dependencies: \
+> **ranger-fm** with optional dependencies: \
 > - `chardet` for better encoding detection; \
 > - `Pillow` (depended by image preview in kitty); \
 > `--HEAD` only.
@@ -311,7 +316,8 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛠 SML NJ
 
-> Standard ML of New Jersey. \
+> ##smlnj## \
+>Standard ML of New Jersey. \
 > For darwin see [macports][smlnjs].
 > * * *
 > TODO: transfer to linuxbrew-core because it now x86_64. \
