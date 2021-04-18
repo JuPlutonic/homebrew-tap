@@ -71,6 +71,13 @@ class PipeViewer < Formula
     sha256 'e41f8761a5e7b9b27af26fe5780d44550d7a6a66bf3078e337d676d07a699941'
   end
 
+  unless OS.linux?
+    resource 'JSON-PP' do
+      url 'https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-PP-4.06.tar.gz'
+      sha256 '0c4ca2e05dc156de2303765174e45b91c637de6601a70db5eef45e30abad27a'
+    end
+  end
+
   resource 'LWP::Protocol::https' do
     url 'https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.10.tar.gz'
     sha256 'cecfc31fe2d4fc854cac47fce13d3a502e8fdfe60c5bc1c09535743185f2a86c'
