@@ -7,7 +7,7 @@ class Mpdscribble < Formula
   head "https://github.com/MusicPlayerDaemon/mpdscribble.git"
 
   livecheck do
-    url "https://musicpd.org/clients/mpdscribble/"
+    url :homepage
     regex(/mpdscribble-(\d+(?:\.\d+)+)\.t/i)
   end
 
