@@ -23,7 +23,7 @@ class Mpdscribble < Formula
   depends_on "libsoup"
 
   def install
-    args = std_meson_args + "--sysconfdir=#{etc}"
+    args = Array.new(std_meson_args) << "--sysconfdir=#{etc}"
 
     mkdir "build" do
       system "meson", *args, ".."
