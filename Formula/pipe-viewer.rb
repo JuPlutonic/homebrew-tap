@@ -17,9 +17,9 @@ class PipeViewer < Formula
   end
 
   # Dep. for Module::Build
-  resource "CPAN::Meta" do
-    url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/CPAN-Meta-2.143240.tar.gz"
-    sha256 "c6d1aa77984154bf72bbca3ac30b6a092379ecd7fdc6d2ddc1addc0b6f5f00b5"
+  resource 'CPAN::Meta' do
+    url 'https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/CPAN-Meta-2.143240.tar.gz'
+    sha256 'c6d1aa77984154bf72bbca3ac30b6a092379ecd7fdc6d2ddc1addc0b6f5f00b5'
   end
 
   # Build dep.
