@@ -39,7 +39,7 @@ class PipeViewer < Formula
   unless OS.linux?
     resource 'Encode' do
       url 'https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI/Encode-3.08.tar.gz'
-      sha256 'd4555f570491648dbbd602bce7966672834b4c8f45acaa6757de474fca3a4d87'
+      sha256 'ed063d01d01a140a3a3ec0aeba2f2b4849a35c18ca96ac231a5d7c7d54d17b5b'
     end
   end
 
@@ -84,7 +84,7 @@ class PipeViewer < Formula
   unless OS.linux?
     resource 'List::Util' do
       url 'https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Scalar-List-Utils-1.56.tar.gz'
-      sha256 '279d78cef84acae280da4dfb95eff0c9865d1611b1a3b026baddf42d1ba01de4'
+      sha256 '15b8537d40fb3e6dae64b2e7e983c47a99b2c20816a180bb9c868b787a12ab5b'
     end
   end
 
