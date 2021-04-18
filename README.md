@@ -8,11 +8,11 @@ Originally cr8d by laggardkernel as a place for:
 
 - DNS cli-apps, Python package managment.
 
-This tap will be more Linuxbrew-core centric, w/o intention to lose darwin platform
-compabillity.
+This tap will be more Linuxbrew-core centric, whithout intention to lose darwin
 
-All Python's whistles and bells were removed, formulas-with-options only for Mac
-also were deleted.
+platform compabillity. All Python's whistles and bells were removed,formulas-
+
+-with-options only for Mac also were deleted.
 
 ## News
 
@@ -25,8 +25,8 @@ also were deleted.
 - 2021-04-15 mpdscribble formula
 - 2021-04-14 smlnj formula, trouble to get in work on linux
 - 2021-04-13
-  - New Readme, first watchlists for Homebrew's livecheck
-      python's venv/conda, casks/formulas w/ options only for Mac were removed.
+  - New Readme, first watchlists for Homebrew's livecheck python's
+      venv/conda, casks/formulas w/ options only for Mac were removed.
   - Backported new updates from original repo.
 - 12-01-2020
   - `Homebrew.args` is deprecated in 2.6.0.
@@ -272,7 +272,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛠 Pipe-viewer
 
-> **pipe-viever** (former straw-viewer, former youtube-viewer).
+> **pipe-viever** (former straw-viewer, former youtube-viewer). \
 > A lightweight YouTube client for Linux. \
 > `--HEAD` only.
 > * * *
@@ -302,7 +302,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 > - `Pillow` (depended by image preview in kitty); \
 > `--HEAD` only.
 > * * *
-> TODO: add livecheck, do tTerm2+python3 errors appears? \
+> TODO: add livecheck, do tTerm2+python3 error appears? \
 > GPL-3.0 License.
 
 ### 🛡️ Routedns
@@ -313,7 +313,8 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛡️ ShDNS
 
-> [shdns][shdns], A port of ChinaDNS (DNS filter) in golang with IPv6 support.
+> [shdns][shdns] is a port of ChinaDNS (DNS filter) in golang with IPv6
+> support. \
 > Only works if shdns-bin is installed (with `brew install`).
 
 ### 🛠 SML NJ
@@ -328,8 +329,9 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛠 sshpass
 
-> [sshpass][sshpass] is easier, less secure way to do SSH-authentification,
-> mostly for home use. Will not be maintained in official Homebrew repos.
+> [sshpass][sshpass] is easier, less secure way to do SSH-authentification, \
+> mostly for home use. \
+Will not be maintained in official Homebrew repos.
 > * * *
 > Livecheck ✔️ \
 > GPLv2 License.
@@ -350,7 +352,8 @@ brew livecheck --tap=juplutonic/homebrew-tap
 ### 🛡️ V2ray2Clash
 
 > [Ne1llee's v2ray2clash][v2ray2clash] a web API used to convert v2ray and ssr
-> subscription lists into clash, QuantumultX format (for VPN creation). \
+> subscription lists into\
+> clash, QuantumultX format (for VPN creation). \
 > `--HEAD` only.
 
 * * *
@@ -389,6 +392,8 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 [v2ray2clash]: https://github.com/xch04028/v2ray2clash
 
-> TODO: Transfer non-DNS binaries to [homebrew-linuxbinary](https://github.com/athrunsun/homebrew-linuxbinary)
-> TODO: Transfer GNU/MIT soft to [linuxbrew-core](https://github.com/Homebrew/linuxbrew-core)
+> TODO: Transfer non-DNS binaries to
+> [homebrew-linuxbinary](https://github.com/athrunsun/homebrew-linuxbinary) \
+> TODO: Transfer GNU/MIT soft to
+> [linuxbrew-core](https://github.com/Homebrew/linuxbrew-core) \
 > TODO: (Optional) Add Penguin/Apple emoticons per apps.
