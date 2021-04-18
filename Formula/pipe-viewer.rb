@@ -73,8 +73,8 @@ class PipeViewer < Formula
 
   unless OS.linux?
     resource 'JSON-PP' do
-      url 'https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-PP-4.06.tar.gz'
-      sha256 '70c4ca2e05dc156de2303765174e45b91c637de6601a70db5eef45e30abad27a'
+      url 'https://cpan.metacpan.org/authors/id/M/MA/MAKAMAKA/JSON-PP-2.27300.tar.gz'
+      sha256 '5feef3067be4acd99ca0ebb29cf1ac1cdb338fe46977585bd1e473ea4bab71a3'
     end
   end
 
