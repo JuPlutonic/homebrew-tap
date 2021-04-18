@@ -2,7 +2,7 @@ class PipeViewer < Formula
   desc 'A lightweight YouTube client for Linux (fork of straw-viewer)'
   homepage 'https://trizenx.blogspot.com/2012/03/gtk-straw-viewer.html'
   url 'https://github.com/trizen/pipe-viewer/archive/refs/tags/0.0.9.tar.gz'
-  sha256 'a0522ec94ffdfe0d0f745f62f42924d35d6d31aa02b934c5a80cb53e95c63231'
+  sha256 '598ec7c39be0a42900ed1f4c5c68c26a728dd09b774e9dd38a873aa2def76e27'
   head 'https://github.com/trizen/pipe-viewer.git'
 
   resource 'inc::latest' do
@@ -17,9 +17,9 @@ class PipeViewer < Formula
   end
 
   # Dep. for Module::Build
-  resource "CPAN::Meta" do
-    url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/CPAN-Meta-2.143240.tar.gz"
-    sha256 "c6d1aa77984154bf72bbca3ac30b6a092379ecd7fdc6d2ddc1addc0b6f5f00b5"
+  resource 'CPAN::Meta' do
+    url 'https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/CPAN-Meta-2.143240.tar.gz'
+    sha256 'c6d1aa77984154bf72bbca3ac30b6a092379ecd7fdc6d2ddc1addc0b6f5f00b5'
   end
 
   # Build dep.
