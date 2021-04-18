@@ -1,36 +1,34 @@
-# ~> NameError: uninitialized constant Formula
 class PipeViewer < Formula
-  desc 'A lightweight YouTube client for Linux (CLI/GTK) (fork of straw-viewer)'
+  desc 'A lightweight YouTube client for Linux (fork of straw-viewer)'
   homepage 'https://trizenx.blogspot.com/2012/03/gtk-straw-viewer.html'
-  url 'https://github.com/trizen/pipe-viewer/archive/refs/tags/0.0.8.tar.gz'
-  sha256 'a8d4c1d15d8d8ab7142d5bc25e6c9b988f5203f70676717a48eb12516ec86806'
+  url 'https://github.com/trizen/pipe-viewer/archive/refs/tags/0.0.9.tar.gz'
+  sha256 'a0522ec94ffdfe0d0f745f62f42924d35d6d31aa02b934c5a80cb53e95c63231'
   head 'https://github.com/trizen/pipe-viewer.git'
 
-  # build deps  //I don't know what is  it doing here//
   resource 'inc::latest' do
     url 'https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/inc-latest-0.500.tar.gz'
     sha256 'daa905f363c6a748deb7c408473870563fcac79b9e3e95b26e130a4a8dc3c611'
   end
 
-  # Garb. for Module::Build
+  # Dep. for Module::Build
   resource 'TAP::Harness' do
     url 'https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.43_02.tar.gz'
     sha256 '019be59351a277c483f2bfb872294016c5831b67193825d5519dc773e11cc63e'
   end
 
-  # Garb. for Module::Build
-  resource 'CPAN::Meta' do
-    url 'https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/CPAN-Meta-2.150010.tar.gz'
-    sha256 'e4f80f2ec73e0741455f957bbfc992b167ecbfa1c9e23ba358df3b37b86ba3d6' # =>
+  # Dep. for Module::Build
+  resource "CPAN::Meta" do
+    url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/CPAN-Meta-2.143240.tar.gz"
+    sha256 "c6d1aa77984154bf72bbca3ac30b6a092379ecd7fdc6d2ddc1addc0b6f5f00b5"
   end
 
-  # Only one build dep.
+  # Build dep.
   resource 'Module::Build' do
     url 'https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4231.tar.gz'
     sha256 '7e0f4c692c1740c1ac84ea14d7ea3d8bc798b2fb26c09877229e04f430b2b717'
   end
 
-  # runtime deps, see: https://github.com/trizen/straw-viewer/blob/master/META.json#L34-L53
+  # Runtime deps
   resource 'Data::Dump' do
     url 'https://cpan.metacpan.org/authors/id/G/GA/GAAS/Data-Dump-1.23.tar.gz'
     sha256 'af53b05ef1387b4cab4427e6789179283e4f0da8cf036e8db516ddb344512b65'
@@ -104,7 +102,6 @@ class PipeViewer < Formula
 
   resource 'Memoize' do
     url 'https://cpan.metacpan.org/authors/id/M/MJ/MJD/Memoize-1.03.tgz'
-    # sha256 "000d7747938aa75d7d524c71574ae7f99ca66a5dac8255a7f7759f373e777000"
     sha256 '5239cc5f644a50b0de9ffeaa51fa9991eb06ecb1bf4678873e3ab89af9c0daf3'
   end
 
@@ -117,12 +114,6 @@ class PipeViewer < Formula
     url 'https://cpan.metacpan.org/authors/id/F/FL/FLORA/Term-ReadLine-1.14.tar.gz'
     sha256 '54523c72b26a04608170849013a433ba400f66b4f9b0524201bfd37ff6e3c477'
   end
-
-  ## Many  deps.
-  # resource "Test::More" do
-  #   url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302183.tar.gz"
-  #   sha256 "00090d4efea82d6e262e6933759e85d27cbcfa4091b14bf4042ae20bab528000"
-  # end
 
   resource 'Text::ParseWords' do
     url 'https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Text-ParseWords-3.30.tar.gz'
@@ -139,7 +130,7 @@ class PipeViewer < Formula
     sha256 '03e63ada499d2645c435a57551f041f3943970492baa3b3338246dab6f1fae0a'
   end
 
-  # optional runtime deps
+  # Optional runtime deps
   resource 'LWP::UserAgent::Cached' do
     url 'https://cpan.metacpan.org/authors/id/O/OL/OLEG/LWP-UserAgent-Cached-0.08.tar.gz'
     sha256 '3dce5ab4c78041656ce78564f76033e5bd1ec386f54d2e7b30740ae48ee787c3'
@@ -147,7 +138,6 @@ class PipeViewer < Formula
 
   resource 'Mozilla::CA' do
     url 'https://cpan.metacpan.org/authors/id/A/AB/ABH/Mozilla-CA-20200520.tar.gz'
-    # sha256 "f2cc9fbe119f756313f321e0d9f1fac0859f8f154ac9d75b1a264c1afdf4e406"
     sha256 'b3ca0002310bf24a16c0d5920bdea97a2f46e77e7be3e7377e850d033387c726'
   end
 
@@ -174,12 +164,9 @@ class PipeViewer < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/pipe-viewer --version").split(/ /)[2]
-    # assert_match "Can't locate", shell_output("#{bin}/pipe-viewer --debug test").subs("Can't locate")
+    assert_match( version.to_s,
+                  shell_output("#{bin}/pipe-viewer --version").split(/ /)[3])
+    assert_match( 'Returning',
+                  shell_output("#{bin}/pipe-viewer --debug test").subs('Returning'))
   end
 end
-
-# ~> NameError
-# ~> uninitialized constant Formula
-# ~>
-# ~> /tmp/seeing_is_believing_temp_dir20210410-3175-otiuz0/program.rb:1:in `<main>'
