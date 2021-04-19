@@ -7,7 +7,7 @@ class Smlnj < Formula
   livecheck do
     url :homepage
     strategy :page_match
-    regex(%r{href=.*?/smlnj-and64-(\d+(?:\.\d+)*)\.pkg}i)
+    regex(/pkg">smlnj-amd64-(\d+(?:\.\d+)*)\.pkg/i)
   end
 
   resource "cm" do
