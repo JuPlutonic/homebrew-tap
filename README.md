@@ -273,8 +273,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 ### 🛠 Pipe-viewer
 
 > **pipe-viever** (former straw-viewer, former youtube-viewer). \
-> A lightweight YouTube client for Linux. \
-> `--HEAD` only.
+> A lightweight YouTube client for Linux.
 > * * *
 > TODO: transfer to linuxbrew-core. \
 > Livecheck ✔️ \
@@ -392,8 +391,8 @@ Will not be maintained in official Homebrew repos.
 
 [v2ray2clash]: https://github.com/xch04028/v2ray2clash
 
-> TODO: Transfer non-DNS binaries to
-> [homebrew-linuxbinary](https://github.com/athrunsun/homebrew-linuxbinary) \
-> TODO: Transfer GNU/MIT soft to
-> [linuxbrew-core](https://github.com/Homebrew/linuxbrew-core) \
+> TODO: Transfer non-DNS binaries
+> to [homebrew-linuxbinary](https://github.com/athrunsun/homebrew-linuxbinary) \
+> TODO: Transfer GNU/MIT soft
+> to [linuxbrew-core](https://github.com/Homebrew/linuxbrew-core) \
 > TODO: (Optional) Add Penguin/Apple emoticons per apps.
