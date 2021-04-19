@@ -125,12 +125,17 @@ class Smlnj < Formula
       resource(name).stage { cp_r pwd, root }
     end
 
-    # inreplace root/"base/runtime/config/gen-posix-names.sh" do |s|
-    #  s.gsub! "PATH=/bin:/usr/bin", "# do not hardcode the path"
-    # end
+    inreplace(root/"base/runtime/objs/mk.x86-darwin", "/usr/bin/as", "as") unless OS.linux?
 
-    # inreplace root/"config/_arch-n-opsys", "16*) OPSYS=linux", "1*) OPSYS=linux"
-    # https://github.com/macports/macports-ports/blob/master/lang/smlnj/Portfile
+    # Orrrr, don't mess with our PATH. Superenv carefully sets that up.
+    inreplace root/"base/runtime/config/gen-posix-names.sh" do |s|
+      s.gsub! "PATH=/bin:/usr/bin", "# do not hardcode the path"
+      s.gsub! "/usr/include", "#{MacOS.sdk_path}/usr/include" unless OS.mac? && MacOS::CLT.installed?
+    end
+
+    # Make the configure program recognize macOS 10.13. Reported upstream:
+    # https://smlnj-gforge.cs.uchicago.edu/tracker/index.php?func=detail&aid=187&group_id=33&atid=215
+    inreplace(root/"config/_arch-n-opsys", "16*) OPSYS=darwin", "1*) OPSYS=darwin") unless OS.linux?
 
     cd root do
       system "config/install.sh", "-default", "64"
