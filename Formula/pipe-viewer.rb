@@ -1,5 +1,5 @@
 class PipeViewer < Formula
-  desc 'Lightweight YouTube client for Linux (fork of straw-viewer)'
+  desc 'A lightweight YouTube client for Linux (fork of straw-viewer)'
   homepage 'https://trizenx.blogspot.com/2012/03/gtk-straw-viewer.html'
   url 'https://github.com/trizen/pipe-viewer/archive/refs/tags/0.0.9.tar.gz'
   sha256 '598ec7c39be0a42900ed1f4c5c68c26a728dd09b774e9dd38a873aa2def76e27'
