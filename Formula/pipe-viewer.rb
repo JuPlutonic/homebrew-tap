@@ -3,6 +3,7 @@ class PipeViewer < Formula
   homepage 'https://trizenx.blogspot.com/2012/03/gtk-straw-viewer.html'
   url 'https://github.com/trizen/pipe-viewer/archive/refs/tags/0.0.9.tar.gz'
   sha256 '598ec7c39be0a42900ed1f4c5c68c26a728dd09b774e9dd38a873aa2def76e27'
+  license all_of: ['Artistic-2.0', 'GPLv1']
   head 'https://github.com/trizen/pipe-viewer.git'
 
   resource 'inc::latest' do
@@ -158,15 +159,13 @@ class PipeViewer < Formula
     system 'perl', 'Build.PL', '--install_base', libexec
     system './Build', 'install'
 
-    %w[pipe-viewer].each do |cmd|
-      (bin/cmd).write_env_script(libexec/"bin/#{cmd}", PERL5LIB: ENV['PERL5LIB'])
-    end
+    (bin/pipe-viewer)
+      .write_env_script(libexec/'bin/pipe-viewer', PERL5LIB: ENV['PERL5LIB'])
   end
 
   test do
-    assert_match( version.to_s,
-                  shell_output("#{bin}/pipe-viewer --version").split(/ /)[3])
-    assert_match( 'Returning',
-                  shell_output("#{bin}/pipe-viewer --debug test").subs('Returning'))
+    assert_match(version.to_s, shell_output("#{bin}/pipe-viewer --version").split(/ /)[3])
+    assert_match(/test/i,
+                 shell_output("#{bin}/pipe-viewer --debug test --std-input=':q'").split("\n")[1])
   end
 end
