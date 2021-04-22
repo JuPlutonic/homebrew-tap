@@ -139,12 +139,15 @@ class Smlnj < Formula
       s.gsub! "/usr/include", "#{MacOS.sdk_path}/usr/include" if OS.mac? && !MacOS::CLT.installed?
     end
 
+    inreplace(root/"nlffi/lib/memory/memory.cm",
+              "# error architecture not supported yet",
+              "	memaccess-a4s2i4l4f4d8.sml	(lambdasplit:infinity)")
     # Make the configure program recognize macOS 10.13. Reported upstream:
     # https://smlnj-gforge.cs.uchicago.edu/tracker/index.php?func=detail&aid=187&group_id=33&atid=215
     inreplace(root/"config/_arch-n-opsys", "16*) OPSYS=darwin", "1*) OPSYS=darwin") unless OS.linux?
 
     cd root do
-      system "config/install.sh", "-default", "64"
+      system "config/install.sh"
     end
 
     %w[
