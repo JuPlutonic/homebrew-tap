@@ -103,7 +103,9 @@ class CurlOptions < Formula
     else
       args << "--with-ssl=#{Formula['openssl@1.1'].opt_prefix}"
       args << '--with-default-ssl-backend=openssl'
-      args << '--without-libpsl'
+      on_macos do
+        args << '--without-libpsl'
+      end
     end
 
     if build.with? 'gssapi'
