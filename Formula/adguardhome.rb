@@ -4,7 +4,7 @@ require "language/go"
 class Adguardhome < Formula
   desc "Network-wide ads & trackers blocking DNS server"
   homepage "https://github.com/AdguardTeam/AdGuardHome"
-  version "0.106.0-b.1"
+  version "0.106.1"
   license "GPL-3.0"
 
   livecheck do
@@ -41,7 +41,8 @@ class Adguardhome < Formula
     depends_on "go" => :build
     depends_on "node" => :build
     depends_on "yarn" => :build
-    elseon_macos do
+  else
+    on_macos do
       url "https://github.com/AdguardTeam/AdGuardHome/releases/download/v#{version}/AdGuardHome_darwin_amd64.zip"
     end
     on_linux do
