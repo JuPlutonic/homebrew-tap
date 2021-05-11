@@ -40,7 +40,7 @@ class CurlOptions < Formula
 
   # HTTP/2 support requires OpenSSL 1.0.2+ or LibreSSL 2.1.3+ for ALPN Support
   # which is currently not supported by Secure Transport (DarwinSSL).
-  if MacOS.version < :mountain_lion
+  if OS.mac? && MacOS.version < :mountain_lion
     depends_on 'openssl@1.1'
   elsif build.with?('libressl')
     depends_on 'libressl'
@@ -58,6 +58,7 @@ class CurlOptions < Formula
   depends_on 'nghttp2' => :optional
   depends_on 'openldap' => :optional
   depends_on 'rtmpdump' => :optional
+  depends_on 'libpsl' => :optional
   depends_on 'zstd'
 
   uses_from_macos 'krb5'
@@ -93,17 +94,17 @@ class CurlOptions < Formula
     # "--with-ssl" any more. "when possible, set the PKG_CONFIG_PATH environment
     # variable instead of using this option". Multi-SSL choice breaks w/o using it.
     # ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl@1.1"].opt_lib}/pkgconfig"
-    if MacOS.version < :mountain_lion
+    case
+    when OS.mac? && MacOS.version < :mountain_lion
       args << "--with-ssl=#{Formula['openssl@1.1'].opt_prefix}"
       args << '--with-default-ssl-backend=openssl'
       args << '--without-libpsl'
-    elsif build.with? 'libressl'
+    when build.with? 'libressl'
       args << "--with-ssl=#{Formula['libressl'].opt_prefix}"
       args << '--with-default-ssl-backend=libressl'
     else
       args << "--with-ssl=#{Formula['openssl@1.1'].opt_prefix}"
       args << '--with-default-ssl-backend=openssl'
-      args << '--without-libpsl'
     end
 
     if build.with? 'gssapi'
