@@ -99,7 +99,7 @@ class CurlOptions < Formula
       args << "--with-ssl=#{Formula['openssl@1.1'].opt_prefix}"
       args << '--with-default-ssl-backend=openssl'
       args << '--without-libpsl'
-    when build.with? 'libressl'
+    when build.with?('libressl')
       args << "--with-ssl=#{Formula['libressl'].opt_prefix}"
       args << '--with-default-ssl-backend=libressl'
     else
