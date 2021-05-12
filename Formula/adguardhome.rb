@@ -4,7 +4,7 @@ require "language/go"
 class Adguardhome < Formula
   desc "Network-wide ads & trackers blocking DNS server"
   homepage "https://github.com/AdguardTeam/AdGuardHome"
-  version "0.106.1"
+  version "0.106.2"
   license "GPL-3.0"
 
   livecheck do
@@ -133,7 +133,7 @@ class Adguardhome < Formula
   end
 
   # #{etc} is not supported here
-  plist_options manual: "sudo AdGuardHome -w /usr/local/etc/adguardhome"
+  plist_options manual: "sudo AdGuardHome -w #{HOMEBREW_PREFIX}/etc/adguardhome"
 
   def plist
     <<~EOS
