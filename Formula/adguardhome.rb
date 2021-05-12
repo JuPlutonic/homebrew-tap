@@ -5,16 +5,17 @@ class Adguardhome < Formula
   desc "Network-wide ads & trackers blocking DNS server"
   homepage "https://github.com/AdguardTeam/AdGuardHome"
   version "0.106.2"
+  sha256 "8bbf034cff50f4cd3119db6707a879c5c87f3fb79c1ef9754c02ff963b215486"
   license "GPL-3.0"
 
   livecheck do
-    url "https://github.com/AdguardTeam/AdGuardHome.git"
+    url :stable
     regex(/^v(\d+(?:\.\d+)+)(?:-\S+(\.\d+))?$/i)
   end
 
   head do
     # version: HEAD
-    url "https://github.com/AdguardTeam/AdGuardHome/archive/refs/heads/master.zip"
+    url "https://github.com/AdguardTeam/AdGuardHome/archive/refs/heads/master.tar.gz"
     # # Git repo is not cloned into a sub-folder. version, HEAD-1234567
     # url "https://github.com/AdguardTeam/AdGuardHome.git"
 
@@ -54,14 +55,14 @@ class Adguardhome < Formula
     # CHANNEL: release, beta, development(default)
     # VERSION: v{major.minor.patch}
     channel = if build.head?
-                "development"
-              # version = "0.0.0"
-              elsif version.to_s.include?("beta") || version.to_s.include?("b") \
+      "development"
+    # version = "0.0.0"
+    elsif version.to_s.include?("beta") || version.to_s.include?("b") \
         || version.to_s.include?("pre")
-                "beta"
-              else
-                "release"
-              end
+      "beta"
+    else
+      "release"
+    end
 
     if build.without?("prebuilt") || build.head?
       # Warning: don't put GOPATH in CWD, failed to build cause packr err raised
