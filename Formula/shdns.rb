@@ -55,7 +55,7 @@ class Shdns < Formula
     EOS
   end
 
-  plist_options manual: "shdns -l4 /usr/local/etc/shdns/cnipv4.txt -l6 /usr/local/etc/shdns/cnipv4.txt -d 114.114.114.114,114.114.115.115 -f 208.67.222.222:443,208.67.222.220:443 -t -w 40 -b 127.0.0.1:5300"
+  plist_options manual: "shdns -l4 #{HOMEBREW_PREFIX}/etc/shdns/cnipv4.txt -l6 #{HOMEBREW_PREFIX}/etc/shdns/cnipv4.txt -d 114.114.114.114,114.114.115.115 -f 208.67.222.222:443,208.67.222.220:443 -t -w 40 -b 127.0.0.1:5300"
   def plist
     <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
