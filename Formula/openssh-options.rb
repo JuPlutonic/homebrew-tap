@@ -1,10 +1,10 @@
 class OpensshOptions < Formula
   desc "OpenBSD freely-licensed SSH connectivity tools"
   homepage "https://www.openssh.com/"
-  url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.5p1.tar.gz"
-  mirror "https://mirror.vdms.io/pub/OpenBSD/OpenSSH/portable/openssh-8.5p1.tar.gz"
-  version "8.5p1"
-  sha256 "f52f3f41d429aa9918e38cf200af225ccdd8e66f052da572870c89737646ec25"
+  url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.6p1.tar.gz"
+  mirror "https://mirror.vdms.io/pub/OpenBSD/OpenSSH/portable/openssh-8.6p1.tar.gz"
+  version "8.6p1"
+  sha256 "c3e6e4da1621762c850d03b47eed1e48dff4cc9608ddeb547202a234df8ed7ae"
   license "SSH-OpenSSH"
 
   livecheck do
@@ -29,7 +29,6 @@ class OpensshOptions < Formula
   depends_on "ldns"
   depends_on "libfido2"
   depends_on "openssl" => :recommended
-  depends_on "libressl" => :optional
 
   uses_from_macos "lsof" => :test
   uses_from_macos "krb5"
@@ -69,6 +68,7 @@ class OpensshOptions < Formula
 
     args = %W[
       --prefix=#{prefix}
+      --with-privsep-path=#{prefix}
       --sysconfdir=#{etc}/ssh
       --with-ldns
       --with-libedit
@@ -77,10 +77,10 @@ class OpensshOptions < Formula
       --with-security-key-builtin
     ]
 
-    if build.with? "libressl"
-      args << "--with-ssl-dir=#{Formula["libressl"].opt_prefix}"
+    args << if build.with?("libressl")
+      "--with-ssl-dir=#{Formula["libressl"].opt_prefix}"
     else
-      args << "--with-ssl-dir=#{Formula["openssl"].opt_prefix}"
+      "--with-ssl-dir=#{Formula["openssl"].opt_prefix}"
     end
 
     system "./configure", *args
@@ -106,84 +106,3 @@ class OpensshOptions < Formula
     assert_match "sshd", shell_output("lsof -i :#{port}")
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
