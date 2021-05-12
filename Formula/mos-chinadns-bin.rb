@@ -20,7 +20,7 @@ class MosChinadnsBin < Formula
   def install
     bin.install "mos-chinadns"
 
-    share_dst = "#{prefix}/share/mos-chinadns/".to_s
+    share_dst = "#{share}/mos-chinadns/".to_s
     mkdir_p share_dst
     cp_r Dir["*.list"], share_dst
     cp_r Dir["*.yaml"], share_dst
@@ -57,7 +57,7 @@ class MosChinadnsBin < Formula
     OUTPUT
   end
 
-  plist_options manual: "mos-chinadns -dir /usr/local/etc/mos-chinadns -c /usr/local/etc/mos-chinadns/config.yaml"
+  plist_options manual: "mos-chinadns -dir #{HOMEBREW_PREFIX}/etc/mos-chinadns -c #{HOMEBREW_PREFIX}/etc/mos-chinadns/config.yaml"
   def plist
     <<~RETURN_STRING
       <?xml version="1.0" encoding="UTF-8"?>
