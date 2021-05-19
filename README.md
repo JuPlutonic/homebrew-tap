@@ -8,26 +8,24 @@ Originally cr8d by laggardkernel as a place for:
 
 - DNS cli-apps, Python package managment.
 
-This tap will be more Linuxbrew-core centric, whithout intention to lose darwin
-
-platform compabillity. All Python's whistles and bells were removed,formulas-
-
--with-options only for Mac also were deleted.
+This tap will be more Linuxbrew-core centric, whithout intention to loose darwin platform compabillity.
 
 ## News
 
    Big changes made in this repo.
 
 ~~~
+- updates-2021-05
 - 2021-04-16
-  - Readme was fixed, adguard was fixed
-      dns- and options-formulae were upd, brew-gem was removed
-- 2021-04-15 mpdscribble formula
-- 2021-04-14 smlnj formula, trouble to get in work on linux
+  - Readme fixed, adguard fixed
+      dns- and options-formulae updated, brew-gem removed
+- 2021-04-15 addes mpdscribble formula
+- 2021-04-14 added smlnj formula (WIP trouble to compile it on L/H-brew.
 - 2021-04-13
-  - New Readme, first watchlists for Homebrew's livecheck python's
-      venv/conda, casks/formulas w/ options only for Mac were removed.
-  - Backported new updates from original repo.
+  - New Readme, first watchlists for Homebrew's livecheck.
+      All Python's whistles and bells removed,
+      Mac-only formulae with options removed.
+  - Picked some new updates from original repo.
 - 12-01-2020
   - `Homebrew.args` is deprecated in 2.6.0.
       Pass value into formula build with
@@ -152,6 +150,11 @@ brew livecheck --tap=juplutonic/homebrew-tap
 
 ### 🛡️ curl-doh
 
+
+### Dmenu-term
+
+> 🕗️Coming soon
+
 ### 🔲🔘🔳 🛡️ DNSmasq
 
 > `dnsmasq-options`:
@@ -270,6 +273,11 @@ brew livecheck --tap=juplutonic/homebrew-tap
 > Livecheck ✔️ \
 > MIT.
 
+
+### PidSwallow
+
+> 🕗️Coming soon
+
 ### 🛠 Pipe-viewer
 
 > **pipe-viever** (former straw-viewer, former youtube-viewer). \
@@ -301,7 +309,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 > - `Pillow` (depended by image preview in kitty); \
 > `--HEAD` only.
 > * * *
-> TODO: add livecheck, do tTerm2+python3 error appears? \
+> TODO: add livecheck, has iTerm2+python3/kitty error [been fixed](https://github.com/ranger/ranger/issues/2089)? \
 > GPL-3.0 License.
 
 ### 🛡️ Routedns
@@ -322,7 +330,7 @@ brew livecheck --tap=juplutonic/homebrew-tap
 >Standard ML of New Jersey. \
 > For darwin see [macports][smlnjs].
 > * * *
-> TODO: transfer to linuxbrew-core because it now x86_64. \
+> TODO: fix compilation, transfer to linuxbrew-core because it now x86_64. \
 > Livecheck ✔️ \
 > BSD like.
 
