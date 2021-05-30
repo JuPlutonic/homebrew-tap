@@ -2,7 +2,7 @@
 
 Originally cr8d by laggardkernel as a place for:
 
-- Homebrew commands removed from [there](https://github.com/Homebrew/brew).
+- Homebrew commands removed from [here](https://github.com/Homebrew/brew).
 
 - Mac-centric formulas with options (passed away in original Homebrew-core repo).
 
